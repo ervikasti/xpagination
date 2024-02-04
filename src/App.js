@@ -7,15 +7,15 @@ function App() {
   const[data,setData] = useState([]);
 
   const apiCall = async () => {
-    try {
+    
         fetch('https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json')
         .then( (response) => response.json())
         .then( (data) => setData(data))
-        .catch((err)=> console.err(err));
-    } catch (error) {
-        alert('failed to fetch data')
+        .catch((err)=> alert('failed to fetch data'));
+    
+        
         // console.log(error);
-    }
+    
   }
   apiCall();
 
